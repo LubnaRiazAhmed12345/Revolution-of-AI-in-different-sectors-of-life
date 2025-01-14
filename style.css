@@ -1,0 +1,604 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+header {
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10; /* Set a high z-index for the header */
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#Logo {
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between; /* Space out the items */
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Make nav links take full width */
+    justify-content: space-between; /* Distribute links evenly */
+    z-index: 20; /* Make sure it's above the hero section */
+}
+
+#nav-links li {
+    margin-left: 10px 0;
+    text-align: center;
+    padding-right: 20px;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: font-size 0.3s, font-weight 0.3s;
+}
+
+
+/* Hover Effect */
+#nav-links a:hover {
+    color: #ffd700; /* Gold color for hover */
+    font-weight: bold;
+    font-size: 1.1rem;  /* Slightly larger on hover */
+} 
+
+#hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    position: relative;
+    z-index: 15; /* Ensure it's above the hero */
+}
+
+#nav-links.show {
+    display: flex; /* Make the nav links visible */
+}
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+    #hamburger {
+        display: none; /* Hide the hamburger on larger screens */
+    }
+}
+
+/* Small screen (mobile) */
+@media (max-width: 600px) {
+    #nav-links {
+        display: none; /* Hide the links initially */
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px; /* Below the header */
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    #nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+
+    #nav-links a {
+        font-size: 1.2rem;  /* Larger font when toggled */
+        font-weight: bold;  /* Bold font when toggled */
+        transition: font-size 0.3s, font-weight 0.3s;  
+        /* Smooth transition for size and weight */
+    }
+
+    #hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    #nav-links.show {
+        display: flex; /* Show links when hamburger is clicked */
+    }
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    background-color: #070a14;
+    position: relative;
+    height: 400px; /* Adjust based on your needs */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/AI-image-min.jpg') center/cover no-repeat;
+    background-size: cover; /* Ensure the image covers the whole section */
+    transition: background-image 1s ease-in-out; /* Smooth transition for background */
+    z-index: 1; /* Lower z-index than the header */
+    
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+  
+  .marquee {
+    display: flex;
+    gap: 5vw;
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .marquee span {
+    display: inline-block;
+    padding-left: 100px;
+    min-width: 100%; /* Ensures each text block takes full screen width */
+    text-align: center;
+  }
+  
+  /* Keyframes for scrolling effect */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .marquee-container {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .marquee-container {
+      font-size: 14px;
+    }
+  }
+  
+.sectorhero {
+    background-color: #070a14;
+    position: relative;
+    height: 400px; /* Adjust based on your needs */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/sectors.jpg') center/cover no-repeat;
+    background-size: cover; /* Ensure the image covers the whole section */
+    transition: background-image 1s ease-in-out; /* Smooth transition for background */
+    z-index: 1; /* Lower z-index than the header */
+    
+}
+.eduhero {
+    background-color: #070a14;
+    position: relative;
+    height: 400px; /* Adjust based on your needs */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/education.jpg') center/cover no-repeat;
+    background-size: cover; /* Ensure the image covers the whole section */
+    transition: background-image 1s ease-in-out; /* Smooth transition for background */
+    z-index: 1; /* Lower z-index than the header */
+    
+    }
+
+    .healthhero {
+        background-color: #070a14;
+        position: relative;
+        height: 400px; /* Adjust based on your needs */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/health.jpeg') center/cover no-repeat;
+        background-size: cover; /* Ensure the image covers the whole section */
+        transition: background-image 1s ease-in-out; /* Smooth transition for background */
+        z-index: 1; /* Lower z-index than the header */
+        
+        }
+        .transporthero {
+            background-color: #070a14;
+            position: relative;
+            height: 400px; /* Adjust based on your needs */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/transport.jpeg') center/cover no-repeat;
+            background-size: cover; /* Ensure the image covers the whole section */
+            transition: background-image 1s ease-in-out; /* Smooth transition for background */
+            z-index: 1; /* Lower z-index than the header */
+            
+            }
+
+        .agrihero {
+            background-color: #070a14;
+            position: relative;
+            height: 400px; /* Adjust based on your needs */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/agri.jpg') center/cover no-repeat;
+            background-size: cover; /* Ensure the image covers the whole section */
+            transition: background-image 1s ease-in-out; /* Smooth transition for background */
+            z-index: 1; /* Lower z-index than the header */
+            
+            }
+        .smarthomehero {
+            background-color: #070a14;
+            position: relative;
+            height: 400px; /* Adjust based on your needs */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/smarthome.jpg') center/cover no-repeat;
+            background-size: cover; /* Ensure the image covers the whole section */
+            transition: background-image 1s ease-in-out; /* Smooth transition for background */
+            z-index: 1; /* Lower z-index than the header */
+            
+            }
+        .robothero {
+            background-color: #070a14;
+            position: relative;
+            height: 400px; /* Adjust based on your needs */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/robot.jpg') center/cover no-repeat;
+            background-size: cover; /* Ensure the image covers the whole section */
+            transition: background-image 1s ease-in-out; /* Smooth transition for background */
+            z-index: 1; /* Lower z-index than the header */
+            
+            }
+        
+
+
+
+    .content {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+        line-height: 1.8;
+        color: #444;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Headings in Content */
+    .content h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 2rem;
+        border-bottom: 2px solid #0078d7;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+    
+    /* Subsection Titles */
+    .content h3 {
+        margin-top: 30px;
+        color: #555;
+        font-size: 1.5rem;
+    }
+    
+    /* Lists in Content */
+    .content ul {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    
+    .content ul li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    
+    .content ul li strong {
+        color: #0078d7;
+    }
+    
+    /* Content Blocks */
+    .content-block {
+        margin-bottom: 30px;
+    }
+    
+    
+
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+
+
+.hero h1, .hero2 h1, .hero3 h1, .hero-text h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p, .hero2 p, .hero3 p, .hero-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
+/* Optional: For adding the effect gradually on page load */
+.hero {
+    animation: fadeInImage 0s ease-in-out forwards; /* Fade in background image */
+}
+
+@keyframes fadeInImage {
+    0% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/AI-image-min.jpg');
+        background-size: 0% 0%;
+    }
+    100% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/AI-image-min.jpg');
+        background-size: cover;
+    }
+}
+
+/* General Styling for Homepage Sections */
+.home-welcome, .home-vision, .home-journey, .home-impact {
+    padding: 50px 20px;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 1100px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Background Colors for Sections */
+.home-welcome {
+    background-color: #e3f2fd;
+}
+
+.home-vision {
+    background-color: #fff8e1;
+}
+
+.home-journey {
+    background-color: #e8f5e9;
+}
+
+.home-impact {
+    background-color: #fce4ec;
+}
+
+/* Headings Styling */
+.home-welcome h2, .home-vision h3, .home-journey h3, .home-impact h3 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.home-welcome p, .home-vision p, .home-journey p, .home-impact p {
+    color: #555;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0 auto;
+}
+
+/* Hover Effects */
+.home-welcome h2:hover, .home-vision h3:hover, .home-journey h3:hover, .home-impact h3:hover {
+    color: #0078d7;
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Sectors Section */
+.sectors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+.sector-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sector-card a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the link fill the entire box */
+}
+
+.sector-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sector-card h2 {
+    color: #2575fc;
+    margin-bottom: 10px;
+}
+
+.sector-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px 35px;
+    background: #222;
+    color: #fff;
+    margin-top: 35px;
+    
+}
+
+/* General mobile adjustments */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: 20px;
+    }
+}
+/* .
+/* Mobile First (default) */
+/* header {
+    flex-direction: column;
+    text-align: center;
+}
+
+header nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    margin: 5px 0;
+} */
+
+/* Tablets and larger screens
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+} */
+
+/* Larger desktops */
+/* @media (min-width: 1024px) {
+    header {
+        padding: 20px 40px;
+    }
+}
+. */ 
+/* Mobile First (default) */
+.hero {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+    .hero {
+        padding: 60px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Larger desktops */
+@media (min-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+}
+/* Mobile First (default) */
+.sectors {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible, stacked layout */
+    gap: 20px;
+    padding: 20px;
+}
+
+.sector-card {
+    padding: 15px;
+}
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+    .sectors {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Slightly larger cards */
+        gap: 25px;
+    }
+
+    .sector-card {
+        padding: 20px;
+    }
+}
+
+/* Larger desktops */
+@media (min-width: 1024px) {
+    .sectors {
+        grid-template-columns: repeat(2, 1fr); /* 3 columns for large screens */
+        gap: 30px;
+    }
+
+    .sector-card {
+        padding: 25px;
+    }
+}
+/* Mobile First (default) */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+    footer {
+        padding: 30px;
+    }
+}
+
+/* Larger desktops */
+@media (min-width: 1024px) {
+    footer {
+        padding: 40px;
+    }
+}
+

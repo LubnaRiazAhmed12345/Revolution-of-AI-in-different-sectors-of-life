@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Revolution</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    
+    <style>
+        .photo-gallery {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.carousel {
+    position: relative;
+    margin: 20px auto;
+    max-width: 900px; /* Large size for visibility */
+    overflow: hidden;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap:2px; /* Space between images */
+  }
+  
+  .carousel-item {
+    flex: 0 0 50%; /* Show 2 items at a time */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 350px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images fill the space proportionally */
+    border-radius: 10px;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  
+/* Video Section */
+.video-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  video {
+    max-width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+
+
+/* Description Section */
+.description-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.description-box {
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo"><a id="Logo" href="index.html">
+            AI Revolution</div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sector.html">Sectors</a></li>
+                <li><a href="remarks.html">Remarks</a></li>
+                <li><a href="pjhighlight.html">Insights</a></li>
+            </ul>
+            <div id="hamburger" class="hamburger">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Project Highlights</h1>
+        <p>Discover how we brought this project to life with dedication and teamwork with support from our school, <b>KMA Girls Secondary School</b></p>
+    </div>
+        
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="photo-gallery">
+        <h2>Photo Gallery</h2>
+        <!-- Photo Carousel Section -->
+        <div class="carousel">
+            <button class="carousel-btn prev-btn">‹</button>
+            <div class="carousel-wrapper">
+              <div class="carousel-track">
+                <div class="carousel-item"><img src="images/image1.jpg" alt="Photo 1"></div>
+                <div class="carousel-item"><img src="images/image2.jpg" alt="Photo 2"></div>
+                <div class="carousel-item"><img src="images/image3-.jpg" alt="Photo 3"></div>
+                <div class="carousel-item"><img src="images/image4-.jpg" alt="Photo 4"></div>
+                <div class="carousel-item"><img src="images/image5-.jpg" alt="Photo 5"></div>
+                <div class="carousel-item"><img src="images/image6-.jpg" alt="Photo 6"></div>
+              </div>
+            </div>
+            <button class="carousel-btn next-btn">›</button>
+          </div>
+    </section>
+
+    <!-- Video Section -->
+    
+        <section class="video-section">
+            <h2>Project Video</h2>
+            <video controls>
+                <source src="images/project-making.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+    <!-- Description Section -->
+    <section class="description-section">
+        <h2>About Our Project</h2>
+        <div class="description-box">
+            <p>
+                Our project is a testament to innovation and teamwork. From brainstorming ideas to creating a final display, 
+                we’ve put our heart into every step. With our school’s support, we’ve explored new technologies and found 
+                ways to make our ideas a reality.
+            </p>
+        </div>
+    </section>
+</main>
+
+    <footer>
+      <p>Brought to you By <b>KMA Girls Secondary School</b></p>
+        <p>Organized By Directorate of Inspection and Registration of Private Institutions of Sindh</p>
+        <p>This project shows the advancements of AI in various sectors and in our daily lives</p>
+        <p>© 2024 AI Revolution. All rights reserved.</p>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0;
+const totalItems = document.querySelectorAll('.carousel-item').length;
+const itemsPerView = 2;
+
+nextBtn.addEventListener('click', () => {
+  if (currentIndex < totalItems - itemsPerView) {
+    currentIndex += itemsPerView;
+    carouselWrapper.style.transform = `translateX(-${currentIndex * 50}%)`;
+  }
+});
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex -= itemsPerView;
+    carouselWrapper.style.transform = `translateX(-${currentIndex * 50}%)`;
+  }
+});
+
+
+    </script>
+</body>
+</html>
